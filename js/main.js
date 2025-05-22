@@ -29,6 +29,7 @@ const usersContainer = document.querySelector('#usersContainer')
 
 
 
+
 // -------------------------------------------------------->
 // EVENTOS:
 //Evento click en botón -> pinta card
@@ -101,6 +102,7 @@ function createUserCard(user){ //Desestructuración ({name, email}) -> como par�
     userCard.append(ulUserInfo)
     ulUserInfo.append(liName, liEmail)
 }
+
 
 
 
