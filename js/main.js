@@ -73,6 +73,7 @@ const getApi = async() =>{
         console.log("Pinta el objeto");
     } catch (error){
         console.log(error)
+        console.log("No pinta el objeto");
     }
 }
 
@@ -103,9 +104,11 @@ function createUserCard(user){ //Desestructuración ({name, email}) -> como par�
     fragment.append(userCard)// -> Añade la card al fragmento   //usersContainer.append(userCard)
     userCard.append(ulUserInfo)
     ulUserInfo.append(liName, liEmail)
+
+    usersContainer.append(fragment); //Inserta el fragmento (la card) en el contenedor de usuario. 
 }
 
-usersContainer.append(fragment); //Inserta el fragmento (la card) en el contenedor de usuario. 
+
 
 
 
