@@ -1,4 +1,73 @@
+/*Working test
 body{
-    /* background-color: red; */
+    background-color: red;
+}*/
+
+/*RESET----------------------------------------*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+li{
+    list-style-type: none;
+}
+
+
+/*ETIQUETAS -----------------------------------*/
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #e9e9d7;
+    padding: 20%;
+}
+
+main{
+    margin: 0 auto;
+}
+
+
+
+/*IDS Y CLASES PERSONALIZADAS ----------------*/
+
+.titleContainer{
+    margin-bottom: 2em;
+    font-size: 1.5em;
+}
+
+
+#buttonAskInfo{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: #e04566;
+    color: rgb(255, 255, 247);
+    padding: 1em 2em;
+    border-radius: 0.25em;
+    border: none;
+    cursor: pointer;
+    box-shadow: rgba(36, 1, 1, 0.24) 0px 3px 8px;
+}
+
+
+.userCard{
+    background-color: #f7f7ee;
+    padding: 2em 2em 1.5em 2em;
+    margin-top: 1em;
+    border-radius: 0.25em;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.userLi{
+    padding-bottom: 0.5em;
+    font-size: 1rem;
+}
+
+
+/*MEDIAQUERIES -----------------------------------*/
+@media (max-width: 600px){
+.titleContainer{
+    text-align: center;
+}
+
+}

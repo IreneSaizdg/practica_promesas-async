@@ -98,7 +98,7 @@ function createUserCard(user){ //Desestructuración ({name, email}) -> como par�
     
     const liEmail = document.createElement('LI');
     liEmail.classList.add("userLi")
-    liEmail.textContent = `Nombre: ${user[0].email}` //email (se puede tomar de desestructuración)
+    liEmail.textContent = `Email: ${user[0].email}` //email (se puede tomar de desestructuración)
 
     //Colocación
     fragment.append(userCard)// -> Añade la card al fragmento   //usersContainer.append(userCard)
