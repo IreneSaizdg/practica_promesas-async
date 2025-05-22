@@ -1,5 +1,15 @@
 /*
 PSEUDO-CÓDIGO
+-------------------------------------------------------->
+VARIABLES:
+Llamada al DOM
+
+-------------------------------------------------------->
+EVENTOS:
+Evento click en botón -> pinta card
+
+-------------------------------------------------------->
+FUNCIONES:
 Entrada: API
 const api = () => {
     //Hacer nueva promesa  
@@ -10,12 +20,13 @@ const api = () => {
 }
 
 
-
-
 const consultaApi = () =>{
     //Resolución de la promesa 
     //Llamar a la funcion api 
         //.then -> resolve
         //.catch -> reject
 }
+
+-------------------------------------------------------->
+INVOCACIONES:
 */
