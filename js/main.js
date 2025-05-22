@@ -33,6 +33,7 @@ const usersContainer = document.querySelector('#usersContainer')
 // EVENTOS:
 //Evento click en botón -> pinta card
 buttonAskInfo.addEventListener("click", () => { 
+    //Ejecutará la función pintar card
     getApi()
 });
 
@@ -78,7 +79,28 @@ const getApi = () =>{
 
 
 
+//Función crear card
+function createUserCard(user){ //Desestructuración ({name, email}) -> como parámetro
+    //Card de usuario
+    const userCard = document.createElement('DIV');
+    userCard.classList.add("userCard")
+    //Lista de datos
+    const ulUserInfo = document.createElement('UL');
+    ulUserInfo.classList.add("userInfo")
+    //Datos
+    const liName = document.createElement('LI');
+    liName.classList.add("userLi")
+    liName.textContent = `Nombre: ${user[0].name}`//nombre (se puede tomar de desestructuración)
+    
+    const liEmail = document.createElement('LI');
+    liEmail.classList.add("userLi")
+    liEmail.textContent = `Nombre: ${user[0].email}` //email (se puede tomar de desestructuración)
 
+    //Colocación
+    usersContainer.append(userCard)
+    userCard.append(ulUserInfo)
+    ulUserInfo.append(liName, liEmail)
+}
 
 
 
