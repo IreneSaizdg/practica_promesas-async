@@ -48,9 +48,9 @@ buttonAskInfo.addEventListener("click", () => {
 const api = () => { //
     return new Promise((resolve, reject) => {
         let usersArray = [] //Array usuarios vacío
-        let isOk //Variable para obtener un booleano.
+        let isOk = true //Variable para obtener un booleano.
         setTimeout(() => { //Activa el retardo
-            if (isOk = true){
+            if (isOk){
                 resolve(
                     usersArray = [{ id: 1, name: "Pepe", email: "pepe@email.com" }]
                 )}
@@ -64,24 +64,26 @@ const api = () => { //
 
 
 
+
 //Función que invoca a la Api
-const getApi = () =>{
-    api()
-        .then((answer) =>{
-            //pintarCard
-            console.log("Pinta el objeto")
-            console.log(answer)
-            createUserCard(answer)
-        })
-        .catch((error) =>{
-           console.log(error)
-        })
+const getApi = async() =>{
+    try{ //try no acepta argumentos 
+        const user = await api();
+        createUserCard(user);
+        console.log("Pinta el objeto");
+    } catch (error){
+        console.log(error)
+    }
 }
 
 
 
 //Función crear card
 function createUserCard(user){ //Desestructuración ({name, email}) -> como parámetro
+    usersContainer.innerHTML = ''; //Vacía la card antes de repintarla
+
+    const fragment = document.createDocumentFragment();//Crea el fragmento
+
     //Card de usuario
     const userCard = document.createElement('DIV');
     userCard.classList.add("userCard")
@@ -98,11 +100,12 @@ function createUserCard(user){ //Desestructuración ({name, email}) -> como par�
     liEmail.textContent = `Nombre: ${user[0].email}` //email (se puede tomar de desestructuración)
 
     //Colocación
-    usersContainer.append(userCard)
+    fragment.append(userCard)// -> Añade la card al fragmento   //usersContainer.append(userCard)
     userCard.append(ulUserInfo)
     ulUserInfo.append(liName, liEmail)
 }
 
+usersContainer.append(fragment); //Inserta el fragmento (la card) en el contenedor de usuario. 
 
 
 
