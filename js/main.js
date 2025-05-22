@@ -24,7 +24,8 @@ const consultaApi = () =>{
 // -------------------------------------------------------->
 // VARIABLES:
 //Llamada al DOM
-
+const buttonAskInfo = document.querySelector('#buttonAskInfo')
+const usersContainer = document.querySelector('#usersContainer')
 
 
 
@@ -32,7 +33,7 @@ const consultaApi = () =>{
 // EVENTOS:
 //Evento click en botón -> pinta card
 buttonAskInfo.addEventListener("click", () => { 
-  drawUserInfo(); //Ejecutará la función pintar card
+    //Ejecutará la función pintar card
 });
 
 
@@ -42,21 +43,33 @@ buttonAskInfo.addEventListener("click", () => {
 // -------------------------------------------------------->
 // FUNCIONES:
 //Entrada: API
-const api = () => {
-    const 
-    //Hacer nueva promesa  
-        //Variable isOk 
-        //Transcurridos x segundos (setTimeOut)
-            //si isOk true resolve data (objeto) Crea el objeto
-            //si isOk false reject error
+const api = () => { //
+    return new Promise((resolve, reject) => {
+        let usersArray = [] //Array usuarios vacío
+        let isOk //Variable para obtener un booleano.
+        setTimeout(() => { //Activa el retardo
+            if (isOk){
+                resolve(
+                    usersArray = [{ id: 1, name: "Pepe", email: "pepe@email.com" }]
+                )}
+            else {
+                reject(
+                    "Error: No hay datos disponibles"
+                )}
+        }, 2000)
+    })
 }
 
-
-const consultaApi = () =>{
-    //Resolución de la promesa 
-    //Llamar a la funcion api 
-        //.then -> resolve
-        //.catch -> reject
+//funcion que invoca a la api
+const getApi = () =>{
+    api()
+        .then((answer) =>{
+            //pintarCard
+            console.log("Pinta el objeto")
+        })
+        .catch((error) =>{
+           error
+        })
 }
 
 
