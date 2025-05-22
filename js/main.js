@@ -33,7 +33,7 @@ const usersContainer = document.querySelector('#usersContainer')
 // EVENTOS:
 //Evento click en botón -> pinta card
 buttonAskInfo.addEventListener("click", () => { 
-    //Ejecutará la función pintar card
+    getApi()
 });
 
 
@@ -42,13 +42,13 @@ buttonAskInfo.addEventListener("click", () => {
 
 // -------------------------------------------------------->
 // FUNCIONES:
-//Entrada: API
+//Función simulación de API
 const api = () => { //
     return new Promise((resolve, reject) => {
         let usersArray = [] //Array usuarios vacío
         let isOk //Variable para obtener un booleano.
         setTimeout(() => { //Activa el retardo
-            if (isOk){
+            if (isOk = true){
                 resolve(
                     usersArray = [{ id: 1, name: "Pepe", email: "pepe@email.com" }]
                 )}
@@ -60,20 +60,28 @@ const api = () => { //
     })
 }
 
-//funcion que invoca a la api
+
+
+//Función que invoca a la Api
 const getApi = () =>{
     api()
         .then((answer) =>{
             //pintarCard
             console.log("Pinta el objeto")
+            console.log(answer)
+            createUserCard(answer)
         })
         .catch((error) =>{
-           error
+           console.log(error)
         })
 }
 
 
 
 
+
+
+
 // -------------------------------------------------------->
 // INVOCACIONES:
+
